@@ -37,11 +37,6 @@ namespace Roster
 
         public void RemovePlayer(Player _player)
         {
-            /*foreach(Player person in players)
-            {
-                if (person.JerseyNr == _player)
-                    players.Remove(person);
-            }*/
             Player tmpPlayer = _player;
             players.Remove(tmpPlayer);
         }
