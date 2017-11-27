@@ -10,14 +10,13 @@ namespace Roster
     {
         static void Main(string[] args)
         {
-            ListOfPlayers ListOfPlayers = new ListOfPlayers("ListOfPlayers");
+            Players Players = new Players("List of players");
             Team Roster = new Team("Roster");
 
 
+            Console.WriteLine("Hello! Let's start working on your team roster:");
             while (true)
             {
-                Console.WriteLine("Hello! Let's start working on your team roster:");
-
                 Console.WriteLine("1. Add player to a list");
                 Console.WriteLine("2. Add player to your team roster");
                 Console.WriteLine("3. Remove player from your team roster");
@@ -43,7 +42,7 @@ namespace Roster
                             Console.WriteLine("Players position:");
                             string _position = Console.ReadLine();
                             Player tmpPlayer = new Player(_name, _lastName, _jerseyNr, _position);
-                            ListOfPlayers.AddPlayerToList(tmpPlayer);
+                            Players.AddPlayerToList(tmpPlayer);
                             break;
                         }
 
@@ -51,7 +50,7 @@ namespace Roster
                         {
                             Console.WriteLine("Put in players last name:");
                             string tmpLastName = Console.ReadLine();
-                            Player tmpPlayer = ListOfPlayers.FindPlayer(tmpLastName);
+                            Player tmpPlayer = Players.FindPlayer(tmpLastName);
                             Roster.AddPlayer(tmpPlayer);
                             break;
                         }
@@ -60,7 +59,7 @@ namespace Roster
                         {
                             Console.WriteLine("Put in players last name:");
                             string tmpLastName = Console.ReadLine();
-                            Player tmpPlayer = ListOfPlayers.FindPlayer(tmpLastName);
+                            Player tmpPlayer = Players.FindPlayer(tmpLastName);
                             Roster.RemovePlayer(tmpPlayer);
                             break;
                         }
@@ -69,7 +68,8 @@ namespace Roster
                         {
                             Console.WriteLine("What's jersey nr then?");
                             int _jerseyNr = Convert.ToInt32(Console.ReadLine());
-                            ListOfPlayers.FindPlayerByJrsNr(_jerseyNr);
+                            Player find = Players.FindPlayer(_jerseyNr);
+                            find.WritePlayer();
                             break;
                             
                         }
@@ -78,7 +78,8 @@ namespace Roster
                         {
                             Console.WriteLine("What's last name then?");
                             string _lastName = Console.ReadLine();
-                            ListOfPlayers.FindPlayer(_lastName);
+                            Player find = Players.FindPlayer(_lastName);
+                            find.WritePlayer();
                             break;
                         }
 
@@ -90,7 +91,7 @@ namespace Roster
 
                     case 7:
                         {
-                            ListOfPlayers.WriteTeamPlayers();
+                            Players.WriteTeamPlayers();
                             break;
                         }
 
