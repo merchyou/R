@@ -10,7 +10,7 @@ namespace Roster
     {
         static void Main(string[] args)
         {
-            Players Players = new Players("ListOfPlayers");
+            Players Players = new Players("List of players");
             Team Roster = new Team("Roster");
 
 
